@@ -1,0 +1,21 @@
+<md-content flex="100" ng-cloak>
+  <section class="jumbotron profile">
+    <div ng-show="me.loading" class="animated-show-hide loading-bar">
+      <p class="lead center">Cargando datos</p>
+      <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+    </div>
+    <div ng-show="!me.loading" class="animated-show-hide">
+      <img ng-src="http://loremflickr.com/320/320/dog?random={{me.user.id}}" alt="User" class="avatar" />
+      <h3>
+        {{me.user.name}}
+        <br><small><md-icon class="material-icons">link</md-icon> {{me.user.website}}</small>
+      </h3>
+      <div layout>
+        <span flex></span>
+        <md-button class="md-icon-button">
+          <md-icon class="material-icons" ng-click="me.activate();">replay</md-icon>
+        </md-button>
+      </div>
+    </div>
+  </section>
+</md-content>
