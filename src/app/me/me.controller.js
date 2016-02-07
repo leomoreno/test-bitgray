@@ -7,7 +7,7 @@
     .controller('MeController', MeController);
 
   /** @ngInject */
-  function MeController($scope, toastr, userApi, $mdDialog, $mdMedia) {
+  function MeController($scope, toastr, userApi, $mdDialog, $mdMedia,$timeout) {
     var vm = this;
     vm.activate = activate;
     vm.selectAlbum = selectAlbum;
@@ -26,11 +26,14 @@
 
     function activate() {
       vm.loading = true;
-      userApi.getRandomUser().then(function(user) {
-        vm.user = user;
-        vm.user.friends = userApi.getRandomUsers();
-        vm.loading = false;
-      });
+      var delay =  (!vm.user)?100:3000;
+      $timeout(function() {
+          userApi.getRandomUser().then(function(user) {
+            vm.user = user;
+            vm.user.friends = userApi.getRandomUsers();
+            vm.loading = false;
+          });
+      }, delay );
     }
     function selectAlbum(album){
       vm.album = album;
