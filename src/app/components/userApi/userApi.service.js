@@ -18,6 +18,7 @@
 
     var service = {
       getRandomUser: getRandomUser,
+      getRandomUsers: getRandomUsers,
       getAlbums: getAlbums,
       getPhotos: getPhotos,
       getPosts: getPosts
@@ -29,6 +30,20 @@
       deferred = $q.defer();
       getUsers();
       return deferred.promise;
+    }
+    function getRandomUsers(limit) {
+      if(!limit){
+        limit = 5;
+      }
+      var users = [];
+      var user = null;
+      while (users.length < limit) {
+        user = randomUser();
+        if(users.indexOf(user) === -1){
+          users.push(user);
+        }
+      }
+      return users;
     }
     function resolveRandomUser() {
       deferred.resolve(randomUser());
