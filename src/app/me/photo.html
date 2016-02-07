@@ -23,6 +23,36 @@
           </div>
         </md-tab-body>
       </md-tab>
+      <md-tab>
+        <md-tab-label>
+          Photos
+        </md-tab-label>
+        <md-tab-body>
+          <div layout="column" layout align="left">
+            <md-toolbar class="md-accent md-hue-1">
+              <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" ng-click="me.unselectAlbum();">
+                  <md-icon class="material-icons">arrow_back</md-icon>
+                </md-button>
+                <h2 class="md-title">{{me.album.title}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                  <md-icon class="material-icons">favorite</md-icon>
+                </md-button>
+              </div>
+            </md-toolbar>
+            <md-content class="md-whiteframe-z1" layout-padding>
+              <div layout="row" layout-wrap>
+                <div layout="column" ng-repeat="photo in me.album.photos" flex-gt-sm="20" flex="50" >
+                  <div flex layout layout-align="center" layout-margin>
+                    <img ng-src="{{photo.thumbnailUrl}}" alt="{{photo.title }}" ng-click="me.showDialog($event, photo);" />
+                  </div>
+                </div>
+              </div>
+            </md-content>
+          </div>
+        </md-tab-body>
+      </md-tab>
     </md-tabs>
   </div>
 </md-content>

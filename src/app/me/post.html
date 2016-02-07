@@ -23,6 +23,43 @@
           </div>
         </md-tab-body>
       </md-tab>
+
+      <md-tab>
+        <md-tab-label>
+          Post details
+        </md-tab-label>
+        <md-tab-body>
+          <div layout="column" layout align="left">
+            <md-toolbar class="md-accent md-hue-1">
+              <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" ng-click="me.unselectPost();">
+                  <md-icon class="material-icons">arrow_back</md-icon>
+                </md-button>
+                <h2 class="md-title">{{me.post.title}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                  <md-icon class="material-icons">favorite</md-icon>
+                </md-button>
+              </div>
+            </md-toolbar>
+            <md-content class="md-whiteframe-z1" layout-padding>
+              <h2 class="md-display-2">{{me.post.body}}</h2>
+            </md-content>
+          </div>
+
+          <div layout="row" layout-wrap layout-padding layout-align="center center">
+            <h3 flex="100">Comentarios</h3>
+            <div layout="column" layout-padding ng-repeat="comment in me.post.comments" flex="80">
+              <md-content flex layout-padding>
+                <h3 class="md-title">{{comment.name}}</h3>
+                <span class="md-caption">{{comment.email}}</span>
+                <p class="md-body-1">{{comment.body}}</p>
+              </md-content>
+            </div>
+          </div>
+
+        </md-tab-body>
+      </md-tab>
     </md-tabs>
   </div>
 </md-content>

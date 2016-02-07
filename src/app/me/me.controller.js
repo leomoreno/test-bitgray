@@ -7,13 +7,15 @@
     .controller('MeController', MeController);
 
   /** @ngInject */
-  function MeController($scope, toastr, userApi) {
+  function MeController($scope, toastr, userApi, $mdDialog, $mdMedia) {
     var vm = this;
     vm.activate = activate;
     vm.selectAlbum = selectAlbum;
     vm.unselectAlbum = unselectAlbum;
     vm.selectPost = selectPost;
     vm.unselectPost = unselectPost;
+    vm.showDialog = showDialog;
+    vm.closeDialog = closeDialog;
     vm.loading = false;
     vm.album = null;
     vm.post = null;
@@ -45,6 +47,31 @@
     function unselectPost(){
       vm.post = null;
       vm.selectedPostIndex = 0;
+    }
+    function showDialog(ev, photo) {
+      var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+      $mdDialog.show({
+        controller: function () { this.photo = photo; this.closeDialog = closeDialog; },
+        controllerAs: 'me',
+        templateUrl: 'app/me/dialog.tmpl.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+        fullscreen: useFullScreen
+      })
+      .then(function(answer) {
+        $scope.status = 'You said the information was "' + answer + '".';
+      }, function() {
+        $scope.status = 'You cancelled the dialog.';
+      });
+      $scope.$watch(function() {
+        return $mdMedia('xs') || $mdMedia('sm');
+      }, function(wantsFullScreen) {
+        $scope.customFullscreen = (wantsFullScreen === true);
+      });
+    }
+    function closeDialog() {
+      $mdDialog.cancel();
     }
 
   }
