@@ -1,4 +1,4 @@
-# Front-end test for Bitgray [http://leomoreno.github.io/test-bitgray/](http://leomoreno.github.io/test-bitgray/)
+# Front-end test for Bitgray
 
 ## Acerca
 
