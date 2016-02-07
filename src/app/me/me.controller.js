@@ -18,6 +18,7 @@
     vm.album = null;
     vm.post = null;
     vm.photo = null;
+    vm.friends = [];
 
     activate();
 

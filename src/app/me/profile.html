@@ -1,0 +1,70 @@
+<md-content layout="row" layout-align="center start" class="tabs-content md-padding">
+  <div layout="column" layout-gt-sm="row" flex="95" layout-padding>
+    <div layout="column" flex="100" flex-gt-xs="50">
+      <div  layout="column" ng-cloak flex="100">
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2 class="md-flex"><md-icon class="material-icons">person</md-icon> About me</h2>
+          </div>
+        </md-toolbar>
+        <md-content flex layout-padding>
+          <p>
+            <strong>Username</strong><br>
+            {{me.user.username}}
+          </p>
+          <p>
+            <strong>Correo</strong><br>
+            {{me.user.email}}
+          </p>
+          <p>
+            <strong>Telefono</strong><br>
+            {{me.user.phone}}
+          </p>
+        </md-content>
+      </div>
+      <br>
+      <div  layout="column" ng-cloak flex="100">
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2 class="md-flex"><md-icon class="material-icons">people</md-icon> Friends</h2>
+          </div>
+        </md-toolbar>
+        <md-content flex ng-repeat="friend in me.user.friends">
+          <div layout="row">
+            <img ng-src="http://loremflickr.com/100/100/dog?random={{friend.id}}" alt="User" class="friend-avatar" flex="20"/>
+            <md-content flex="80" layout-padding>
+              <strong>{{friend.name}}</strong>
+              <br>
+              <small>{{friend.username}}</small>
+            </md-content>
+          </div>
+          <md-divider md-inset ng-if="!$last"></md-divider>
+        </md-content>
+      </div>
+    </div>
+    <div flex="50">
+      <div layout="column">
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2 class="md-flex"><md-icon class="material-icons">domain</md-icon> Work</h2>
+          </div>
+        </md-toolbar>
+        <md-content flex layout-padding>
+          <p>
+            <strong>Company</strong><br>
+            {{me.user.company.name}}
+          </p>
+          <p>
+            <strong>Catch Phrase</strong><br>
+            {{me.user.company.catchPhrase}}
+          </p>
+          <p>
+            <strong>Business Services</strong><br>
+            {{me.user.company.bs}}
+          </p>
+        </md-content>
+      </div>
+      <span flex></span>
+    </div>
+  </div>
+</md-content>

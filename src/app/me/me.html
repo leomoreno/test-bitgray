@@ -19,3 +19,19 @@
     </div>
   </section>
 </md-content>
+
+<div ng-cloak ng-show="!me.loading" class="animated-show-hide">
+  <md-content class="profile-tabs">
+    <md-tabs md-dynamic-height>
+      <md-tab label="Perfil">
+        <div ng-include src="'app/me/profile.html'"></div>
+      </md-tab>
+      <md-tab label="Fotos">
+        <div ng-include src="'app/me/photo.html'"></div>
+      </md-tab>
+      <md-tab label="Posts">
+        <div ng-include src="'app/me/post.html'"></div>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>
