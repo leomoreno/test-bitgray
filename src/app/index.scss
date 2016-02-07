@@ -1,0 +1,92 @@
+/**
+ *  Do not remove this comments bellow. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+html {
+  font-family: 'Roboto Slab', serif;
+}
+
+[layout=row] {
+  flex-direction: row;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.thumbnail {
+  height: 200px;
+
+  img.pull-right {
+    width: 50px;
+  }
+}
+
+md-toolbar.md-default-theme {
+  background-color: black;
+}
+
+// views animations
+.slideup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 1;
+}
+.slideup.ng-enter,
+.slideup.ng-leave {
+    -webkit-transition: all .8s ease;
+    transition: all .8s ease;
+}
+.slideup.ng-enter {
+    // margin-top: 0;
+    opacity: 0;
+}
+.slideup.ng-enter-active {
+    // margin-top: 0;
+    opacity: 1;
+}
+.slideup.ng-leave {
+    // margin-top: 0;
+    opacity: 1;
+}
+.slideup.ng-leave-active {
+    // margin-top: -50%;
+    opacity: 0;
+}
+.main{
+  background-image: url(../assets/images/home-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  md-whiteframe{
+    background-color: rgba(255,255,255,.9);
+    padding: 0 2em 3em;
+  }
+}
+.animated-show-hide {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.animated-show-hide.ng-hide {
+  opacity:0;
+}
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

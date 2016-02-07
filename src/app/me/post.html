@@ -1,0 +1,65 @@
+<md-content class="md-padding tabs-content" layout="row" layout-align="center start">
+  <div layout-sm="column" layout="row" flex="95" layout-padding>
+    <md-tabs md-selected="me.selectedPostIndex" class="panel-tabs" flex>
+      <md-tab >
+        <md-tab-label>
+          Posts
+        </md-tab-label>
+        <md-tab-body layout-padding layout-margin>
+          <div flex layout="row" layout-align="center start" layout-margin layout-wrap>
+            <div ng-repeat="post in me.user.posts" flex-gt-sm="30" flex="40" flex-xs="95">
+              <md-card ng-click="me.selectPost(post);">
+                <img ng-click="me.selectPost(post);" ng-src="http://loremflickr.com/320/320/building?random={{post.id}}" />
+                <md-card-title>
+                  <md-card-title-text>
+                    <span class="md-headline">{{ post.title | limitTo:12 }}</span>
+                  </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                  <p>{{ post.body | limitTo:40 }}...</p>
+                </md-card-content>
+              </md-card>
+            </div>
+          </div>
+        </md-tab-body>
+      </md-tab>
+
+      <md-tab>
+        <md-tab-label>
+          Post details
+        </md-tab-label>
+        <md-tab-body>
+          <div layout="column" layout align="left">
+            <md-toolbar class="md-accent md-hue-1">
+              <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" ng-click="me.unselectPost();">
+                  <md-icon class="material-icons">arrow_back</md-icon>
+                </md-button>
+                <h2 class="md-title">{{me.post.title}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                  <md-icon class="material-icons">favorite</md-icon>
+                </md-button>
+              </div>
+            </md-toolbar>
+            <md-content class="md-whiteframe-z1" layout-padding>
+              <h2 class="md-display-2">{{me.post.body}}</h2>
+            </md-content>
+          </div>
+
+          <div layout="row" layout-wrap layout-padding layout-align="center center">
+            <h3 flex="100">Comentarios</h3>
+            <div layout="column" layout-padding ng-repeat="comment in me.post.comments" flex="80">
+              <md-content flex layout-padding>
+                <h3 class="md-title">{{comment.name}}</h3>
+                <span class="md-caption">{{comment.email}}</span>
+                <p class="md-body-1">{{comment.body}}</p>
+              </md-content>
+            </div>
+          </div>
+
+        </md-tab-body>
+      </md-tab>
+    </md-tabs>
+  </div>
+</md-content>

@@ -1,0 +1,16 @@
+<md-dialog aria-label="Foto" ng-cloak flex-xs="80" >
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Foto</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="me.closeDialog()">
+          <md-icon class="material-icons" aria-label="Close dialog">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <img style="margin: auto; max-width: 100%;" alt="{{me.photo.title}}" ng-src="{{me.photo.url}}">
+      </div>
+    </md-dialog-content>
+</md-dialog>
