@@ -1,7 +1,7 @@
-<md-content layout="row" layout-align="center start" class="tabs-content md-padding">
-  <div layout="column" layout-gt-sm="row" flex="95" layout-padding>
-    <div layout="column" flex="100" flex-gt-xs="50">
-      <div  layout="column" ng-cloak flex="100">
+<md-content class="md-padding tabs-content" layout="row" layout-align="center start">
+  <div layout-gt-sm="row" layout="column" flex="95" layout-padding>
+    <div layout="column" flex flex-gt-sm="50">
+      <div  layout="column" ng-cloak flex>
         <md-toolbar>
           <div class="md-toolbar-tools">
             <h2 class="md-flex"><md-icon class="material-icons">person</md-icon> About me</h2>
@@ -23,16 +23,18 @@
         </md-content>
       </div>
       <br>
-      <div  layout="column" ng-cloak flex="100">
+      <div  layout="column" ng-cloak flex>
         <md-toolbar>
           <div class="md-toolbar-tools">
             <h2 class="md-flex"><md-icon class="material-icons">people</md-icon> Friends</h2>
           </div>
         </md-toolbar>
         <md-content flex ng-repeat="friend in me.user.friends">
-          <div layout="row">
-            <img ng-src="http://loremflickr.com/100/100/dog?random={{friend.id}}" alt="User" class="friend-avatar" flex="20"/>
-            <md-content flex="80" layout-padding>
+          <div layout="row" layout-align="left start">
+            <div>
+              <img ng-src="http://loremflickr.com/100/100/dog?random={{friend.id}}" alt="User" class="friend-avatar" />
+            </div>
+            <md-content flex layout-padding>
               <strong>{{friend.name}}</strong>
               <br>
               <small>{{friend.username}}</small>
@@ -42,7 +44,7 @@
         </md-content>
       </div>
     </div>
-    <div flex="50">
+    <div flex flex-gt-sm="50">
       <div layout="column">
         <md-toolbar>
           <div class="md-toolbar-tools">
