@@ -4,6 +4,8 @@
 
 Esta una app demo para Bitgray, genera un perfil de usuario a partir de los datos tomados de [typicode.com](http://jsonplaceholder.typicode.com)
 
+Esta app está usa la [Guía de Estilo de Angular de John Papa](https://github.com/johnpapa/angular-styleguide)
+
 ## Esta app usa una serie de tecnologías opensource pra funcionar:
 
   * [AngularJS](https://angularjs.org) - Superheroic JavaScript MVW Framework
@@ -34,7 +36,7 @@ $ npm install
 $ bower install
 ```
 
-## Usar Gulp para ejecutar
+### Usar Gulp para ejecutar
 
 * `gulp` or `gulp build` para hacer build de una versión optimozada de la applicación en `/dist`
 * `gulp serve` para lanzar un browser sync server a partir de los archivos fuente
@@ -46,4 +48,4 @@ $ bower install
 
 ### Créditos
 
-Imagenes tomadas de [pixabay.com](https://c/es/vidrio-resumen-refracci%C3%B3n-hacer-1076855/)
+Las imagenes utilizadas fueron tomadas de [pixabay.com](https://c/es/vidrio-resumen-refracci%C3%B3n-hacer-1076855/)
