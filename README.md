@@ -43,3 +43,7 @@ $ bower install
 * `gulp test:auto` para lanzar los unit tests con Karma en watch mode
 * `gulp protractor` para lanzar los e2e tests con Protractor
 * `gulp protractor:dist` para lanzar los e2e tests con Protractor en la versión optimizada `/dist`
+
+### Créditos
+
+Imagenes tomadas de [pixabay.com](https://c/es/vidrio-resumen-refracci%C3%B3n-hacer-1076855/)
