@@ -41,15 +41,15 @@
                 </md-button>
               </div>
             </md-toolbar>
-            <md-content class="md-whiteframe-z1" layout-padding>
-              <h2 class="md-title show-xs">{{me.album.title}}</h2>
-              <div layout="row" layout-wrap>
-                <div layout="column" ng-repeat="photo in me.album.photos" flex-gt-sm="20" flex="50" flex-xs="100">
-                  <div flex layout layout-align="center" layout-margin>
-                    <img ng-src="{{photo.thumbnailUrl}}" alt="{{photo.title }}" ng-click="me.showDialog($event, photo);" />
-                  </div>
-                </div>
+            <md-content class="md-whiteframe-z1">
+              <div layout-padding>
+                <h2 class="md-title hide-gt-xs">{{me.album.title}}</h2>
               </div>
+              <md-grid-list
+              md-cols="2" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="8" md-cols-gt-lg="10"
+               md-row-height="1:1">
+                <md-grid-tile md-rowspan="1" md-colspan="1" ng-repeat="photo in me.album.photos" ng-style="{'background-image':'url({{photo.thumbnailUrl}})', 'background-size':'cover'}" ng-click="me.showDialog($event, photo);"></md-grid-tile>
+              </md-grid-list>
             </md-content>
           </div>
         </md-tab-body>
